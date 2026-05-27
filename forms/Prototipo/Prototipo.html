@@ -1,0 +1,240 @@
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide-flat.min.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+</head>
+<style>
+	.labelMargin {
+		margin: 2px;
+	}
+
+	i {
+		margin: 2px;
+	}
+</style>
+
+<body>
+	<div class="fluig-style-guide">
+		<form name="form" role="form">
+
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title"><i class="animaliaicon animaliaicon-user icon-md" aria-hidden="true"></i>
+						Candidato</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="form-group col-md-4">
+							<label for="nome">Nome</label>
+							<input type="text" id="inputNome" name="nome" class="form-control">
+						</div>
+						<div class="form-group col-md-3">
+							<label for="email">E-mail</label>
+							<input type="email" id="inputEmail" name="email" class="form-control">
+						</div>
+						<div class="form-group col-md-2">
+							<label for="telefone">Telefone</label>
+							<input type="text" id="inputTelefone" name="telefone" class="form-control">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-2">
+							<label for="dataNascimento">Data de Nascimento</label>
+							<input type="text" id="inputDataNascimento" name="dataNascimento" class="form-control">
+						</div>
+						<div class="form-group col-md-3">
+							<label for="cpf">CPF</label>
+							<input type="text" id="inputCPF" name="cpf" class="form-control" mask="000.000.000-00">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title"><i class="animaliaicon animaliaicon-info icon-md" aria-hidden="true"></i> Informações
+						da Vaga</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="form-group col-md-2">
+							<labe>Tipo de Contrato</labe>
+							<div class="radio">
+								<label class="labelMargin"><input type="radio" name="tipoContrato" id="tipoContrato"
+										value="Estagio">Estágio</label>
+								<label class="labelMargin"><input type="radio" name="tipoContrato" id="tipoContrato"
+										value="Efetivo">Efetivo</label>
+								<label class="labelMargin"><input type="radio" name="tipoContrato" id="tipoContrato"
+										value="Estagio">PJ</label>
+							</div>
+						</div>
+						<div class="form-group col-md-2">
+							<label>Escolaridade</label>
+							<div class="checkbox">
+								<label><input type="checkbox" name="medio">Médio</label>
+								<label><input type="checkbox" name="tecnico">Técnico</label>
+								<label><input type="checkbox" name="superior">Superior</label>
+							</div>
+						</div>
+						<div class="form-group col-md-3">
+							<label for="idioma">Idioma</label>
+							<input type="zoom" class="form-control" id="idioma" name="idioma" data-zoom="
+									{
+											'displayKey':'Idioma',
+											'datasetId':'dsFormIdiomas',
+											'maximumSelectionLength': 3,
+											'placeholder':'Escolha o Idioma',
+											'fields':[{
+													'field':'Idioma',
+													'label':'Idioma'
+											}]
+									}">
+							</select>
+						</div>
+						<div class="form-group col-md-1">
+							<label for="salario">Salário</label>
+							<input type="number" id="salario" name="salario" class="form-control">
+						</div>
+						<div class="form-group col-md-3">
+							<label for="Moeda">Moeda</label>
+							<input type="zoom" class="form-control" id="Moeda" name="Moeda" data-zoom="
+									{
+											'displayKey':'Simbolo',
+											'datasetId':'dsFormMoedas',
+											'maximumSelectionLength': 1,
+											'placeholder':'Escolha a Moeda',
+											'fields':[{
+													'field':'Simbolo',
+													'label':'Simbolo'
+											},{
+													'field':'Nome',
+													'label':'Nome'
+											}]
+									}">
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title"><i class="animaliaicon animaliaicon-map-pin icon-md" aria-hidden="true"></i>
+						Endereço</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="form-group col-md-1">
+							<label for="cep">CEP</label>
+							<input type="text" name="cep" id="cep" class="form-control" mask="00000-000">
+						</div>
+						<div class="form-group col-md-1">
+							<label for="estado">Estado</label>
+							<input type="text" name="estado" id="estado" class="form-control">
+						</div>
+						<div class="form-group col-md-2">
+							<label for="cidade">Cidade</label>
+							<input type="text" name="cidade" id="cidade" class="form-control">
+						</div>
+						<div class="form-group col-md-2">
+							<label for="bairro">Bairro</label>
+							<input type="text" name="bairro" id="bairro" class="form-control">
+						</div>
+						<div class="form-group col-md-3">
+							<label for="logradouro">Logradouro</label>
+							<input type="text" name="logradouro" id="logradouro" class="form-control">
+						</div>
+						<div class="form-group col-md-1">
+							<label for="numero">Número</label>
+							<input type="text" name="numero" id="numero" class="form-control">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-12">
+							<label for="informacoes">Informações Adicionais</label>
+							<textarea rows="5" name="informacoes" id="informacoes" class="form-control"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title"><i class="animaliaicon animaliaicon-bank icon-md" aria-hidden="true"></i>
+						Dados Bancários</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="form-group col-md-2">
+							<label for="banco">Banco</label>
+							<input type="text" id="banco" name="banco" class="form-control">
+						</div>
+						<div class="form-group col-md-1">
+							<label for="conta">Conta</label>
+							<input type="text" id="conta" name="conta" class="form-control">
+						</div>
+						<div class="form-group col-md-2">
+							<label>Tipo de conta</label>
+							<div class="radio">
+								<label for="fisica" class="labelMargin"><input type="radio" name="tipoConta" id="tipoConta"
+										value="Fisica">Fisica</label>
+								<label for="juridica" class="labelMargin"><input type="radio" name="tipoConta" id="tipoConta"
+										value="juridica">Jurídica</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title"><i class="animaliaicon animaliaicon-users icon-md" aria-hidden="true"></i>Responsáveis
+					</h3>
+				</div>
+				<div class="panel-body">
+					<table tablename="responsaveisTabela" class="table table-hover" addbuttonlabel="Adicionar Responsável"
+						addbuttonclass="btn btn-primary">
+						<thead>
+							<tr>
+								<td>
+									Lista de Responsáveis
+								</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<input type="zoom" class="form-control" id="responsavel" name="responsavel" data-zoom="
+        {
+            'displayKey':'colleagueName',
+            'datasetId':'colleague',
+            'maximumSelectionLength': 1,
+						'placeholder':'Escolha o usuário',
+            'fields':[{
+                'field':'colleagueId',
+                'label':'colleagueId'
+            },{
+                'field':'colleagueName',
+                'label':'colleagueName',
+                'standard':true
+            },{
+                'field':'mail',
+                'label':'mail'
+            }]
+        }">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+<script type="text/javascript" src="cep.js"></script>
+<script type="text/javascript">
+	var calendarDataNascimento = FLUIGC.calendar('#inputDataNascimento');
+</script>
+
+
+</html>
